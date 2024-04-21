@@ -1,0 +1,35 @@
+Создание таблиц в базе данных:
+Для работы с базой данных вам необходимо создать две таблицы: users и subscriptions. Вот примерный SQL-код для создания этих таблиц в PostgreSQL:
+
+sql
+
+
+Copy code
+-- Создание таблицы users
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    balance NUMERIC(12,2) DEFAULT 0,
+    referral_bonus NUMERIC(12,2) DEFAULT 0
+);
+
+-- Создание таблицы subscriptions
+CREATE TABLE subscriptions (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    name VARCHAR(255) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    expires DATE NOT NULL
+);
+Таблица users содержит следующие поля:
+
+id: уникальный идентификатор пользователя (первичный ключ).
+balance: баланс пользователя.
+referral_bonus: реферальный бонус пользователя.
+Таблица subscriptions содержит следующие поля:
+
+id: уникальный идентификатор подписки (первичный ключ).
+user_id: идентификатор пользователя, которому принадлежит подписка (внешний ключ, ссылающийся на таблицу users).
+name: название подписки.
+status: статус подписки.
+expires: дата окончания подписки.
+После создания таблиц вы можете заполнить их тестовыми данными, чтобы проверить работу вашего кода.

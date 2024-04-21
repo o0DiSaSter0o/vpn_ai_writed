@@ -22,13 +22,10 @@ trial_keyboard.add(InlineKeyboardButton('Активировать пробный
 buy_keyboard = InlineKeyboardMarkup()
 buy_keyboard.add(InlineKeyboardButton('Оплатить подписку', callback_data='buy_subscription'))
 
-# keyboards.py
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
 def subscription_types_keyboard():
+    """Создание клавиатуры с вариантами типов подписок."""
     keyboard = InlineKeyboardMarkup()
     keyboard.add(InlineKeyboardButton('1 месяц - 300 монет', callback_data='buy_1_month'))
     keyboard.add(InlineKeyboardButton('3 месяца - 800 монет', callback_data='buy_3_months'))
     keyboard.add(InlineKeyboardButton('1 год - 2500 монет', callback_data='buy_1_year'))
     return keyboard
-# Добавьте дополнительные клавиатуры по мере необходимости
