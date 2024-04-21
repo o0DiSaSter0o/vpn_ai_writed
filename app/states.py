@@ -1,3 +1,4 @@
+# states.py
 from aiogram.dispatcher.filters.state import StatesGroup, State
 
 class UserStates(StatesGroup):
@@ -13,3 +14,13 @@ class PurchaseStates(StatesGroup):
 
 class TrialStates(StatesGroup):
     WAITING_FOR_TRIAL_ACTIVATION = State()
+
+class ReferralStates(StatesGroup):
+    WAITING_FOR_REFERRAL_ACTIVATION = State()
+
+class SubscriptionManagementStates(StatesGroup):
+    VIEWING_SUBSCRIPTION_DETAILS = State()
+    CHANGING_SUBSCRIPTION_PLAN = State()
+    CANCELING_SUBSCRIPTION = State()
+
+# Возможно, вам потребуется добавить дополнительные состояния для других функций бота.

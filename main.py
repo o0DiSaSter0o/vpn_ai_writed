@@ -1,3 +1,4 @@
+#main.py
 from aiogram import Bot, Dispatcher, executor
 from config import BOT_TOKEN
 from handlers import register_handlers_main
